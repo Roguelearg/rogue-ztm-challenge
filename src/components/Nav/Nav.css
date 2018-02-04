@@ -1,0 +1,8 @@
+.navbar, .navbar-expand-lg, .navbar-light, .bg-info{
+  min-height: 10%;
+}
+
+#title {
+  vertical-align: middle;
+  margin: auto;
+}
