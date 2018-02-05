@@ -6,3 +6,7 @@
   vertical-align: middle;
   margin: auto;
 }
+
+.bg-info {
+  opacity: 0.5;
+}

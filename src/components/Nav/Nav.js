@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import Carousel from '../../containers/Carousel/Carousel';
 import './Nav.css';
 
 const Nav = () => {

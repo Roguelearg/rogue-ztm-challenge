@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Person from '../../components/Person/Person';
 import './Carousel.css';
 
 class Carousel extends Component {
@@ -62,40 +63,32 @@ class Carousel extends Component {
           <span className="sr-only">Previous</span>
         </p>
         <div className="carousel-inner" ref={(carousel) => this.carousel = carousel}>
-          <div className="carousel-item active" style={{transform: `translate3d(${this.state.position}px, 0px, 0px)`}} >
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
-            <i className="material-icons">person</i>
+          <div className="carousel-item" style={{transform: `translate3d(${this.state.position}px, 0px, 0px)`}} >
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+            <Person />
+
           </div>
         </div>
         <p role="button" className="carousel-control-next" data-slide="next" onClick={this.nextPosition} ref={(next) => this.next = next} disabled={this.state.next}>

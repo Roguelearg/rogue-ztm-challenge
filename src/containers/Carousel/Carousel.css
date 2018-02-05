@@ -1,6 +1,6 @@
 .carousel {
   display: flex;
-  overflow: hidden;
+  overflow-y: hidden;
   position: relative;
   white-space: nowrap;
   text-align: center;
@@ -15,6 +15,10 @@
 }
 .carousel-control-prev, .carousel-control-next {
   position: relative;
+}
+
+.carousel-item {
+  display: flex;
 }
 
 
