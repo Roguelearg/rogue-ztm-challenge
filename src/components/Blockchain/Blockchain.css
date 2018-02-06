@@ -113,7 +113,7 @@ p {
 .hash#present {
   grid-area: presentHash;
 }
-auto
+
 
 .grid2 {
   display: grid;
@@ -160,7 +160,7 @@ p#previous {
 p#present {
   padding: 0 10px 0 10px;
   white-space: nowrap;
-  overflow-x: auto;
+  overflow: auto;
 }
 
 
