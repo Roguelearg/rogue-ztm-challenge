@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Person from '../../components/Blockchain/Blockchain';
+import Blockchain from '../../components/Blockchain/Blockchain';
 import './Blockchains.css';
 
 class Blockchains extends Component {

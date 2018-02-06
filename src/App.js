@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './components/Nav/Nav';
-import Blockchains from './containers/Blockchains/Blockchains';
+// import Blockchains from './containers/Blockchains/Blockchains';
 import Particles from 'react-particles-js';
 import './App.css';
 
@@ -31,7 +31,7 @@ class App extends Component {
         </header>
         <div className='bg'>
           <h1 className="title">Blockchain</h1>
-          <Blockchains />
+          {/* <Blockchains /> */}
         </div>
       </div>
     );
