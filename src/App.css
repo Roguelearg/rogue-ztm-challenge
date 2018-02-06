@@ -13,3 +13,7 @@ h1.title {
   right: 0;
   z-index: -1;
 }
+
+.App-header {
+  width: 100%;
+}

@@ -5,8 +5,16 @@
 #title {
   vertical-align: middle;
   margin: auto;
+  text-align: center;
 }
 
 .bg-info {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 576px) {
+  #title {
+    vertical-align: middle;
+    margin: auto;
+  }
 }

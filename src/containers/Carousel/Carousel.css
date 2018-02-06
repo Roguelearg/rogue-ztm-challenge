@@ -5,8 +5,8 @@
   white-space: nowrap;
   text-align: center;
   width: auto;
-  margin: auto;
-  max-width: 100%;
+  /* margin: auto; */
+  max-width: 90%;
 }
 
 .material-icons {
@@ -30,7 +30,7 @@
     white-space: nowrap;
     text-align: center;
     width: auto;
-    margin: auto;
+    /* margin: auto; */
     max-width: 100%;
   }
 
