@@ -14,7 +14,8 @@ class Blockchains extends Component {
 
   render(){
     return (
-      <div>
+      <div className='chain'>
+        <Blockchain />
       </div>
     );
   }

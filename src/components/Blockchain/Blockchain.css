@@ -1,0 +1,129 @@
+.grid {
+  padding: 24px;
+  height: auto;
+  display: grid;
+  background-color: rgba(255,255,255,0.8);
+  -moz-box-shadow: 0px 1px 3px 0px #656565;
+  -webkit-box-shadow: 0px 1px 3px 0px #656565;
+  -o-box-shadow: 0px 1px 3px 0px #656565;
+  box-shadow: 0px 1px 3px 0px #656565;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  width: 650px;
+}
+
+.grid:hover {
+  -moz-box-shadow: 1px 2px 20px 0px #656565;
+  -webkit-box-shadow: 1px 2px 20px 0px #656565;
+  -o-box-shadow: 1px 2px 20px 0px #656565;
+  box-shadow: 1px 2px 20px 0px #656565;
+  transition: 0.3s ease all;
+}
+
+.datas{
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.data {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  vertical-align: middle;
+  border: 1px rgba(50,48,45,0.3) solid;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 20px;
+  margin-bottom: 0;
+  display: inline;
+  width: 69px;
+}
+
+.input.form-control {
+  padding-left: 10px;
+  padding-right: auto;
+  width: calc(100% - 69px);
+  border: 1px rgba(50,48,45,0.3) solid;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.form-control {
+  background: none;
+  float: left;
+  display: inline;
+}
+
+.form-control:focus {
+  background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+.label {
+  clear: both;
+  float: left;
+  font-size: 15px;
+  font-weight: 600;
+  padding-right: 10px;
+  display: inline;
+}
+
+.hash {
+  vertical-align: middle;
+  float: left;
+  display: inline;
+}
+
+.hashes {
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+p#previous {
+  width: calc(100% - 131px);
+}
+
+p#present {
+  border: 1px solid rgba(50,48,45,0.3);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: calc(100% - 53px);
+  padding: 0 10px 0 10px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: calc(100% - 50px) 50px;
+  grid-template-areas: "grid3 nounce";
+}
+
+.grid3{
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-areas: "order date";
+  grid-area: grid3;
+  min-width: 536px;
+  overflow-x: auto;
+}
+
+.blockOrder {
+  vertical-align: middle;
+  grid-area: order;
+}
+
+.nounce {
+  grid-area: nounce;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.6);
+  align-self: center;
+  margin-top: 25px;
+}
+.blockDate{
+  align-self: end;
+  justify-self: start;
+  grid-area: date;
+}

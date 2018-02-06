@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Nav from './components/Nav/Nav';
-// import Blockchains from './containers/Blockchains/Blockchains';
+import Blockchains from './containers/Blockchains/Blockchains';
 import Particles from 'react-particles-js';
 import './App.css';
 
 const particlesOptions = {
   particles: {
     number:{
-      value: 150,
+      value: 70,
       density: {
         enable: true,
-        value_area: 1000
+        value_area: 700
       }
     },
     line_linked: {
@@ -31,7 +31,7 @@ class App extends Component {
         </header>
         <div className='bg'>
           <h1 className="title">Blockchain</h1>
-          {/* <Blockchains /> */}
+          <Blockchains />
         </div>
       </div>
     );
