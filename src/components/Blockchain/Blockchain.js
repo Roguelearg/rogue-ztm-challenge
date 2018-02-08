@@ -44,7 +44,6 @@ class Blockchain extends Component {
     if(ahah.previousHash !== this.state.previousHash) {
       this.props.onHashChange(this.state.id, this.state.date, this.state.data, this.state.previousHash, this.state.nounce, this.renderHash.bind(this));
       this.setState({previousHash: ahah.previousHash})
-      if(this.state.validHash) this.setState({validHash: false});
     }
   }
 
@@ -59,20 +58,34 @@ class Blockchain extends Component {
     const {id, date, previousHash, nounce} = this.state;
     this.setState({data: data});
     this.props.onHashChange(id, date, data, previousHash, nounce, this.renderHash.bind(this));
-    if(this.state.validHash) this.setState({validHash: false});
   }
 
   nounceOrRepareHash = () => {
 
-    return this.state.validHash ?
+    return this.verifyHash(this.state.hash) ?
       <p className='nounce small-border asc'>{this.state.nounce}</p> :
       <button type="button" className='nounce asc btn btn-info build' onClick={this.repare}><i className="material-icons fs2 fw6">build</i></button>
 
   }
 
+  verifyHash(hash) {
+    return (hash.substring(0, 3) === '000');
+  }
 
+  colorHash = (hash) => {
+    let truc;
+    return this.verifyHash(hash.toString()) ? truc = {borderColor: 'green', color: 'green', backgroundColor: 'rgba(0,255,0,0.1)' } : truc = {borderColor: 'red', color: 'red', backgroundColor: 'rgba(255,0,0,0.1)'};
+  }
+
+  colorPreviousHash = (hash) => {
+    if(hash !== 0) {
+      let truc;
+      return this.verifyHash(hash.toString()) ? truc = {color: 'green'} : truc = {color: 'red'};
+    }
+  }
 
   render(){
+    console.log(this.state.hash.length);
     return (
       <div className="grid mb4">
         <div className='datas gridData'>
@@ -81,11 +94,11 @@ class Blockchain extends Component {
         </div>
         <div className='previousHash'>
           <p className='label' id='previousHash'>Previous Hash</p>
-          <p className='hash' id='previous'>{this.state.previousHash}</p>
+          <p className='hash' id='previous' style={this.colorPreviousHash(this.state.previousHash)}>{this.state.previousHash}</p>
         </div>
         <div className='hashes'>
           <p className='label' id='presentHash'>Hash</p>
-          <p className='hash small-border bl br' id='present'>{this.state.hash}</p>
+          <p className='hash small-border bl br' id='present' style={this.colorHash(this.state.hash)}>{this.state.hash}</p>
         </div>
         <div className='grid2'>
           <div className='grid3'>
