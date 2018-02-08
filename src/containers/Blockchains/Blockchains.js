@@ -68,7 +68,7 @@ class Blockchains extends Component {
           return block;
         })
         }
-        <button type="button" className="btn btn-primary" onClick={this.addBlock}>Add Block</button>
+        <button type="button" className="btn btn-info" onClick={this.addBlock}>Add Block</button>
       </div>
     );
   }

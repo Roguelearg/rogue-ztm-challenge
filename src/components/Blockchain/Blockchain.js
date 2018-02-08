@@ -14,7 +14,8 @@ class Blockchain extends Component {
       data: iniData,
       nounce: 0,
       previousHash: this.props.previousHash,
-      hash: '0'
+      hash: '0',
+      validHash: true
     }
 
   }
@@ -30,7 +31,7 @@ class Blockchain extends Component {
 
   renderNounce = (pro) => {
     let params = pro;
-    this.setState({nounce: params.nounce});
+    this.setState({nounce: params.nounce, validHash: true});
   }
 
   renderNumBlock = () => {
@@ -43,7 +44,12 @@ class Blockchain extends Component {
     if(ahah.previousHash !== this.state.previousHash) {
       this.props.onHashChange(this.state.id, this.state.date, this.state.data, this.state.previousHash, this.state.nounce, this.renderHash.bind(this));
       this.setState({previousHash: ahah.previousHash})
+      if(this.state.validHash) this.setState({validHash: false});
     }
+  }
+
+  repare = () => {
+    this.props.repareHash(this.state.id, this.state.date, this.state.data, this.state.previousHash, this.renderHash.bind(this), this.renderNounce.bind(this));
   }
 
 
@@ -53,7 +59,17 @@ class Blockchain extends Component {
     const {id, date, previousHash, nounce} = this.state;
     this.setState({data: data});
     this.props.onHashChange(id, date, data, previousHash, nounce, this.renderHash.bind(this));
+    if(this.state.validHash) this.setState({validHash: false});
   }
+
+  nounceOrRepareHash = () => {
+
+    return this.state.validHash ?
+      <p className='nounce small-border asc'>{this.state.nounce}</p> :
+      <button type="button" className='nounce asc btn btn-info build' onClick={this.repare}><i className="material-icons fs2 fw6">build</i></button>
+
+  }
+
 
 
   render(){
@@ -76,7 +92,7 @@ class Blockchain extends Component {
             <p className='blockOrder h2 title asc'>{this.renderNumBlock()}</p>
             <p className='blockDate'>on {this.state.date}</p>
           </div>
-          <p className='nounce small-border asc'>{this.state.nounce}</p>
+          {this.nounceOrRepareHash()}
         </div>
       </div>
     );
