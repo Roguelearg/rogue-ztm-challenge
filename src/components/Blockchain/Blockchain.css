@@ -120,7 +120,7 @@ p {
   display: grid;
   grid-area: grid2;
   grid-template-areas: "grid3 nounce";
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 70px;
   grid-template-rows: 54px;
 }
 
