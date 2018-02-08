@@ -45,8 +45,7 @@ p {
   grid-template-columns: 24px calc(100% - 48px) 24px;
   grid-template-rows: 24px 50px 46px 7px 46px 53px 24px;
   height: auto;
-  max-width: 650px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .grid:hover {
@@ -119,7 +118,7 @@ p {
   display: grid;
   grid-area: grid2;
   grid-template-areas: "grid3 nounce";
-  grid-template-columns: calc(100% - 50px) 50px;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 54px;
 }
 
@@ -155,7 +154,8 @@ p {
 }
 
 p#previous {
-  width: calc(100% - 131px);
+  white-space: nowrap;
+  overflow: auto;
 }
 
 p#present {
@@ -172,7 +172,10 @@ p#present {
 
 .nounce {
   grid-area: nounce;
-  text-align: center;
+  justify-self: center;
+  padding-left: 5px;
+  padding-right: 5px;
+
 }
 .blockDate{
   align-self: flex-end;

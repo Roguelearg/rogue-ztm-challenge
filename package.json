@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://roguelearg.github.io/rogue-ztm-challenge",
   "dependencies": {
+    "js-sha256": "^0.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-particles-js": "^2.1.0",
