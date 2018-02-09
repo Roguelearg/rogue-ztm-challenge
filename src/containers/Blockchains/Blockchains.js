@@ -15,10 +15,6 @@ class Blockchains extends Component {
     }
   }
 
-  componentDidMount(){
-
-  }
-
   createBlockchains = () => {
     const {number} = this.state;
     let vue = [];
