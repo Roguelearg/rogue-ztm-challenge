@@ -36,11 +36,12 @@ class Blockchains extends Component {
 
   repareHash = (id, date, data, previousHash, renderHash, renderNounce) => {
     let nonce = 0;
-    let hash = 0;
-    do {
-        hash = this.createHash(date, data, previousHash, nonce);
-        nonce++;
-    }while(hash.substring(0, 3) !== '000');
+    let hash = this.createHash(date, data, previousHash, nonce);
+    while(hash.substring(0, 3) !== '000') {
+      nonce++;
+      hash = this.createHash(date, data, previousHash, nonce);
+    }
+    console.log('repare', id, date, data, previousHash, nonce);
     let hashes = this.state.hashes;
     hashes[id] = hash;
     renderHash({hash: hash});
@@ -55,6 +56,7 @@ class Blockchains extends Component {
 
   onHashChange = (id, date, data, previousHash, nonce, renderHash) =>
   {
+    console.log('change', id, date, data, previousHash, nonce);
     let hash = this.createHash(date, data, previousHash, nonce)
     let hashes = this.state.hashes;
     hashes[id] = hash;
