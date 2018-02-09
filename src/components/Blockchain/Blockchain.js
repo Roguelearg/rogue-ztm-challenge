@@ -74,14 +74,12 @@ class Blockchain extends Component {
   }
 
   colorHash = (hash) => {
-    let truc;
-    return this.verifyHash(hash.toString()) ? truc = {borderColor: 'green', color: 'green', backgroundColor: 'rgba(0,255,0,0.1)' } : truc = {borderColor: 'red', color: 'red', backgroundColor: 'rgba(255,0,0,0.1)'};
+    return this.verifyHash(hash.toString()) ? {borderColor: 'green', color: 'green', backgroundColor: 'rgba(0,255,0,0.1)' } : {borderColor: 'red', color: 'red', backgroundColor: 'rgba(255,0,0,0.1)'};
   }
 
   colorPreviousHash = (hash) => {
     if(hash !== 0) {
-      let truc;
-      return this.verifyHash(hash.toString()) ? truc = {color: 'green'} : truc = {color: 'red'};
+      return this.verifyHash(hash.toString()) ? {color: 'green'} : {color: 'red'};
     }
   }
 
