@@ -4,4 +4,36 @@ body {
   font-family: sans-serif;
   overflow-x: hidden;
   background-color: white;
+  height: 100%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* position: absolute; */
+}
+
+p {
+  margin: 0;
+}
+
+.asc {
+  align-self: center;
+}
+
+.h2 {
+  margin: 0;
+}
+
+.small-border {
+  border: 1px rgba(50,48,45,0.3) solid;
+}
+
+.bl {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.br {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }

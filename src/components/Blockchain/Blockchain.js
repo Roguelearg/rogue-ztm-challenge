@@ -7,7 +7,8 @@ class Blockchain extends Component {
     super(props);
 
     const now = new Date().toUTCString();
-    const iniData = this.props.id > 0 ? "" : "Welcome to Brendon's Blockchain"
+    console.log(this.props);
+    const iniData = this.props.id > 0 ? this.props.data : "Welcome to Brendon's Blockchain"
     this.state={
       id: this.props.id,
       date: now,
@@ -85,12 +86,11 @@ class Blockchain extends Component {
   }
 
   render(){
-    console.log(this.state.hash.length);
     return (
       <div className="grid mb4">
         <div className='datas gridData'>
           <p className='data small-border asc bl'>Data</p>
-          <input className='input form-control small-border br' type="text" value={this.state.data} onChange={this.onDataChange}/>
+          <input className='input form-control small-border br lf' type="text" value={this.state.data} onChange={this.onDataChange}/>
         </div>
         <div className='previousHash'>
           <p className='label' id='previousHash'>Previous Hash</p>
