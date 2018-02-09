@@ -7,7 +7,6 @@ class Blockchain extends Component {
     super(props);
 
     const now = new Date().toUTCString();
-    console.log(this.props);
     const iniData = this.props.id > 0 ? this.props.data : "Welcome to Brendon's Blockchain"
     this.state={
       id: this.props.id,
@@ -41,10 +40,10 @@ class Blockchain extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const ahah = nextProps;
-    if(ahah.previousHash !== this.state.previousHash) {
+    const nProps = nextProps;
+    if(nProps.previousHash !== this.state.previousHash) {
       this.props.onHashChange(this.state.id, this.state.date, this.state.data, this.state.previousHash, this.state.nonce, this.renderHash.bind(this));
-      this.setState({previousHash: ahah.previousHash})
+      this.setState({previousHash: nProps.previousHash})
     }
   }
 
