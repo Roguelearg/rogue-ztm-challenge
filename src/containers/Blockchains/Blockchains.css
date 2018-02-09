@@ -1,9 +1,9 @@
 .chain {
+  align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 75px auto;
-  flex-direction: column;
-  align-items: center;
   max-width: 100%;
 
 }
@@ -37,9 +37,8 @@
 }
 
 .input.form-control {
-  padding-left: 10px;
-  padding-right: auto;
   align-self: center;
+  padding-left: 10px;
 }
 
 .lf {

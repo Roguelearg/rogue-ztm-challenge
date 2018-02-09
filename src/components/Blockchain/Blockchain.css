@@ -17,11 +17,11 @@
     " . grid2 . "
     " . . . ";
   grid-template-columns: 24px calc(100% - 48px) 24px;
-  grid-template-rows: 24px 50px 46px 7px 46px 53px 24px;
+  grid-template-rows: 24px 36px 46px 7px 46px 53px 24px;
   height: auto;
   max-width: 100%;
-  width: 750px;
   opacity: 0.7;
+  width: 750px;
 }
 
 .grid:hover {
@@ -31,31 +31,6 @@
   box-shadow: 1px 2px 20px 0 #656565;
   transition: 0.3s ease all;
 }
-
-/* .gridData {
-  display: grid;
-  grid-area: gridData;
-  grid-template-areas: "data input";
-  grid-template-columns: 69px calc(100% - 69px);
-} */
-
-/* .data {
-  grid-area: data;
-}
-
-.data {
-  font-size: 20px;
-  padding: 5px 10px;
-} */
-
-/* .input {
-  grid-area: input;
-} */
-
-/* .bmd-form-group {
-  align-self: center;
-  padding-top: 0;
-} */
 
 .previousHash {
   align-items: flex-end;
@@ -89,11 +64,10 @@
   grid-area: presentHash;
 }
 
-
 .grid2 {
   display: grid;
   grid-area: grid2;
-  grid-template-areas: "grid3 nounce";
+  grid-template-areas: "grid3 nonce";
   grid-template-columns: auto 70px;
   grid-template-rows: 54px;
 }
@@ -108,37 +82,22 @@
   white-space: nowrap;
 }
 
-/* .input.form-control {
-  padding-left: 10px;
-  padding-right: auto;
-  align-self: center;
-} */
-
-
-/* .form-control {
-  background: none;
-}
-
-.form-control:focus {
-  background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
-} */
-
 .label {
   font-size: 15px;
   font-weight: 600;
 }
 
 p#previous {
-  white-space: nowrap;
-  overflow: auto;
   font-weight: 400;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 p#present {
+  font-weight: 400;
+  overflow: auto;
   padding: 0 10px 0 10px;
   white-space: nowrap;
-  overflow: auto;
-  font-weight: 400;
 }
 
 
@@ -147,8 +106,8 @@ p#present {
   padding-right: 10px;
 }
 
-.nounce {
-  grid-area: nounce;
+.nonce {
+  grid-area: nonce;
   justify-self: center;
   padding-left: 5px;
   padding-right: 5px;
@@ -162,18 +121,12 @@ p#present {
 }
 .build {
   border-radius: 50%;
-  width: 54px;
   height: 54px;
   opacity: 0.7;
+  width: 54px;
 }
 
 .material-icons.fs2 {
   font-size: 35px;
   opacity: 0.9;
 }
-
-/* @media screen and (max-width: 750px) {
-  .grid {
-    width: 100%;
-  }
-} */

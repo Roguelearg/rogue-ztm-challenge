@@ -13,7 +13,7 @@ class Blockchain extends Component {
       id: this.props.id,
       date: now,
       data: iniData,
-      nounce: 0,
+      nonce: 0,
       previousHash: this.props.previousHash,
       hash: '0',
       validHash: true
@@ -32,7 +32,7 @@ class Blockchain extends Component {
 
   renderNounce = (pro) => {
     let params = pro;
-    this.setState({nounce: params.nounce, validHash: true});
+    this.setState({nonce: params.nonce, validHash: true});
   }
 
   renderNumBlock = () => {
@@ -43,7 +43,7 @@ class Blockchain extends Component {
   componentWillReceiveProps(nextProps) {
     const ahah = nextProps;
     if(ahah.previousHash !== this.state.previousHash) {
-      this.props.onHashChange(this.state.id, this.state.date, this.state.data, this.state.previousHash, this.state.nounce, this.renderHash.bind(this));
+      this.props.onHashChange(this.state.id, this.state.date, this.state.data, this.state.previousHash, this.state.nonce, this.renderHash.bind(this));
       this.setState({previousHash: ahah.previousHash})
     }
   }
@@ -56,16 +56,16 @@ class Blockchain extends Component {
   onDataChange = (event) =>
   {
     const data = event.target.value;
-    const {id, date, previousHash, nounce} = this.state;
+    const {id, date, previousHash, nonce} = this.state;
     this.setState({data: data});
-    this.props.onHashChange(id, date, data, previousHash, nounce, this.renderHash.bind(this));
+    this.props.onHashChange(id, date, data, previousHash, nonce, this.renderHash.bind(this));
   }
 
-  nounceOrRepareHash = () => {
+  nonceOrRepareHash = () => {
 
     return this.verifyHash(this.state.hash) ?
-      <p className='nounce small-border asc'>{this.state.nounce}</p> :
-      <button type="button" className='nounce asc btn btn-info build' onClick={this.repare}><i className="material-icons fs2 fw6">build</i></button>
+      <p className="nonce small-border asc">{this.state.nonce}</p> :
+      <button type="button" className="nonce asc btn btn-info build" onClick={this.repare}><i className="material-icons fs2 fw6">build</i></button>
 
   }
 
@@ -88,24 +88,24 @@ class Blockchain extends Component {
   render(){
     return (
       <div className="grid mb4">
-        <div className='datas gridData'>
-          <p className='data small-border asc bl'>Data</p>
-          <input className='input form-control small-border br lf' type="text" value={this.state.data} onChange={this.onDataChange}/>
+        <div className="datas gridData">
+          <p className="data small-border asc bl">Data</p>
+          <input className="input form-control small-border br lf" type="text" value={this.state.data} onChange={this.onDataChange}/>
         </div>
-        <div className='previousHash'>
-          <p className='label' id='previousHash'>Previous Hash</p>
-          <p className='hash' id='previous' style={this.colorPreviousHash(this.state.previousHash)}>{this.state.previousHash}</p>
+        <div className="previousHash">
+          <p className="label" id="previousHash">Previous Hash</p>
+          <p className="hash" id="previous" style={this.colorPreviousHash(this.state.previousHash)}>{this.state.previousHash}</p>
         </div>
-        <div className='hashes'>
-          <p className='label' id='presentHash'>Hash</p>
-          <p className='hash small-border bl br' id='present' style={this.colorHash(this.state.hash)}>{this.state.hash}</p>
+        <div className="hashes">
+          <p className="label" id="presentHash">Hash</p>
+          <p className="hash small-border bl br" id="present" style={this.colorHash(this.state.hash)}>{this.state.hash}</p>
         </div>
-        <div className='grid2'>
-          <div className='grid3'>
-            <p className='blockOrder h2 title asc'>{this.renderNumBlock()}</p>
-            <p className='blockDate'>on {this.state.date}</p>
+        <div className="grid2">
+          <div className="grid3">
+            <p className="blockOrder h2 title asc">{this.renderNumBlock()}</p>
+            <p className="blockDate">on {this.state.date}</p>
           </div>
-          {this.nounceOrRepareHash()}
+          {this.nonceOrRepareHash()}
         </div>
       </div>
     );

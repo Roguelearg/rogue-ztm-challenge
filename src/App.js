@@ -22,20 +22,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Particles className='particles'
+        <Particles className="particles"
           params={particlesOptions}
         />
-        <header className="App-header">
+        <header className="App-header regwidth">
           <h1 className="title">Blockchain</h1>
         </header>
-        <div className="content">
+        <div className="content regwidth">
           <Blockchains />
         </div>
-        <footer>
+        <footer className="regwidth">
           <div className="gridFooter">
             <h4 className="name">Copyrigth<i className="material-icons copy">copyright</i>Brendon T.</h4>
             <div className="icons">
-              <i className="fa fa-github" aria-hidden= 'true'/>
+              <a href="https://github.com/Roguelearg">
+                <i className="fa fa-github" aria-hidden= "true"/>
+              </a>
             </div>
           </div>
         </footer>

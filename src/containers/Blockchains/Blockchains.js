@@ -39,27 +39,27 @@ class Blockchains extends Component {
   }
 
   repareHash = (id, date, data, previousHash, renderHash, renderNounce) => {
-    let nounce = 0;
+    let nonce = 0;
     let hash = 0;
     do {
-        hash = this.createHash(date, data, previousHash, nounce);
-        nounce++;
+        hash = this.createHash(date, data, previousHash, nonce);
+        nonce++;
     }while(hash.substring(0, 3) !== '000');
     let hashes = this.state.hashes;
     hashes[id] = hash;
     renderHash({hash: hash});
-    renderNounce({nounce: nounce});
+    renderNounce({nonce: nonce});
     this.setState({hashes: hashes});
     this.setState({data: ''});
   }
 
-  createHash = (date, data, previousHash, nounce) => {
-    return sha256(data + date + nounce + previousHash);
+  createHash = (date, data, previousHash, nonce) => {
+    return sha256(data + date + nonce + previousHash);
   }
 
-  onHashChange = (id, date, data, previousHash, nounce, renderHash) =>
+  onHashChange = (id, date, data, previousHash, nonce, renderHash) =>
   {
-    let hash = this.createHash(date, data, previousHash, nounce)
+    let hash = this.createHash(date, data, previousHash, nonce)
     let hashes = this.state.hashes;
     hashes[id] = hash;
     this.setState({hashes: hashes});
@@ -69,7 +69,7 @@ class Blockchains extends Component {
 
   render(){
     return (
-      <div className='chain'>
+      <div className="chain">
         {
           this.createBlockchains().map(block => {
             return block;
